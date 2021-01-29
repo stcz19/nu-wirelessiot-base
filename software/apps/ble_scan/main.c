@@ -33,7 +33,30 @@ void ble_evt_adv_report(ble_evt_t const* p_ble_evt) {
   uint8_t* adv_buf = adv_report->data.p_data; // array of up to 31 bytes of advertisement payload data
   uint16_t adv_len = adv_report->data.len; // length of advertisement payload data
 
-  printf("Received an advertisement!\n");
+  // printf("Received an advertisement!\n");
+   // filtering device
+   if (ble_addr[5] == 0xC0 && ble_addr[4] == 0x98 && ble_addr[3] == 0xe5 && ble_addr[2] == 0x4e) {
+
+    // Print BLE address
+       printf("flitered addr %X:%X:%X:%X:%X:%X : ", ble_addr[0], ble_addr[1], ble_addr[2], ble_addr[3], ble_addr[4], ble_addr[5]);
+       
+      // «Complete List of 16-bit Service Class UUIDs» data type val 0x03
+     // uint8_t val = 0;
+     //uint8_t type =adv_buf[val++];
+    // uint8_t len = adv_buf[val++] -1;
+   
+      // while(val< adv_len){
+
+	 //if(len-- && val < adv_len){
+         //  printf(" 16-bit Service Class UUID is 0x", ) // for hex use %02x          
+
+
+          // }
+                 
+   }
+ 
+    //printf("Received an advertisement!3\n");
+
 }
 
 
